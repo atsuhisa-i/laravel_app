@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
+<style>
+th { background-color:red; padding:10px; }
+td { vackground-color:#eee; padding:10px }
+</style>
 <head>
   <title>Index</title>
 </head>
