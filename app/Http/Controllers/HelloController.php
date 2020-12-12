@@ -17,4 +17,8 @@ class HelloController extends Controller
         ];
         return view('hello.index', $data);
     }
+    function __construct()
+    {
+        config(['sample.message'=>'新しいメッセージ!']);
+    }
 }
