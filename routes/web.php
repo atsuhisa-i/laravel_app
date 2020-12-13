@@ -28,7 +28,7 @@ Route::namespace('App\Http\Controllers\Sample')->group(function(){
     Route::get('/sample/other', 'SampleController@other');
 });
 
-Route::get('/hello', 'App\Http\Controllers\HelloController@index');
+Route::get('/hello', 'App\Http\Controllers\HelloController@index')->name('hello');
 Route::post('/hello', 'App\Http\Controllers\HelloController@index');
 Route::get('/hello/other', 'App\Http\Controllers\HelloController@other');
 Route::post('/hello/other', 'App\Http\Controllers\HelloController@other');
