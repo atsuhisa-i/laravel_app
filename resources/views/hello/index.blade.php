@@ -10,10 +10,10 @@ td { vackground-color:#eee; padding:10px }
 <body>
   <h1>Hello/Index</h1>
   <p>{!!$msg!!}</p>
-  <ul>
-  @foreach($data as $item)
-  <li>{!!$item!!}</li>
-  @endforeach
-  </ul>
+  <form action="/hello" method="post">
+    @csrf
+    <input type="text" name="msg">
+    <input type="submit">
+  </form>
 </body>
 </html>
