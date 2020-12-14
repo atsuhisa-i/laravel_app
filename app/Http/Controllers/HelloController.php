@@ -17,12 +17,13 @@ class HelloController extends Controller
         $this->fname = 'hello.txt';
     }
 
-    public function index()
+    public function index(int $id = -1)
     {
-        $myservice = app('App\MyClasses\MyService');
+        $myservice = app()->makeWith('App\MyClasses\MyService',
+            ['id' => $id]);
         $data = [
-            'msg' => $myservice->say(),
-            'data' => $myservice->data()
+            'msg' => $myservice->say($id),
+            'data' => $myservice->alldata()
         ];
         return view('hello.index', $data);
     }
