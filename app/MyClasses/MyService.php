@@ -3,12 +3,15 @@ namespace App\MyClasses;
 
 class MyService
 {
+  private $serial;
   private $id = -1;
   private $msg = 'no id...';
   private $data = ['Hello', 'Welcome', 'Bye'];
 
   public function __construct()
   {
+    $this->serial = rand();
+    echo "「" . $this->serial . "」";
   }
 
 
@@ -21,7 +24,7 @@ class MyService
           . ', data:"' . $this->data[$id] . '"';
     }
   }
-  
+
   public function say()
   {
     return $this->msg;

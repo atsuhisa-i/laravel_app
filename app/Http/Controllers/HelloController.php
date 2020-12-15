@@ -10,11 +10,9 @@ use App\MyClasses\MyService;
 
 class HelloController extends Controller
 {
-    private $fname;
-
-    public function __construct()
+    function __construct(MyService $myservice)
     {
-        $this->fname = 'hello.txt';
+        $myservice = app('App\MyClasses\MyService');
     }
 
     public function index(MyService $myservice, int $id = -1)
