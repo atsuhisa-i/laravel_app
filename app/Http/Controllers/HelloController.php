@@ -7,19 +7,19 @@ use Illuminate\Http\Response;
 // use App\Models\Person;
 use Illuminate\Support\Facades\Storage;
 use App\MyClasses\MyService;
+use App\MyClasses\MyServiceInterface;
 
 class HelloController extends Controller
 {
-    function __construct(MyService $myservice)
+    function __construct()
     {
-        $myservice = app('App\MyClasses\MyService');
     }
 
-    public function index(MyService $myservice, int $id = -1)
+    public function index(MyServiceInterface $myservice, int $id = -1)
     {
         $myservice->setId($id);
         $data = [
-            'msg' => $myservice->say($id),
+            'msg' => $myservice->say(),
             'data' => $myservice->alldata()
         ];
         return view('hello.index', $data);
